@@ -1,10 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-
-// //import axios for api call
-// import axios from 'axios';
-
-// // enabling  Axios for accessible globally
-// app.config.globalProperties.$axios = axios;
+import './assets/global.css'
 
 createApp(App).mount('#app')

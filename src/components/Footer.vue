@@ -1,13 +1,10 @@
 <template>
   <footer>
     <p>&copy; 2023 Developed by Romeo Antony</p>
-    
   </footer>
 </template>
 
 <style scoped>
-
-
 /* Footer styling */
 footer {
   background-color: #34495e;
@@ -22,5 +19,4 @@ footer {
 p {
   margin: 0;
 }
-
 </style>

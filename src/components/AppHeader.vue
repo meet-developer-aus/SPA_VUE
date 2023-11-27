@@ -1,23 +1,15 @@
 <template>
   <header>
-    <h1> {{ title }}</h1>
-   
+    <h1>{{ title }}</h1>
   </header>
 </template>
 
 <script>
-  import {ref} from 'vue'
+import { ref } from "vue";
 
 export default {
-  props:['title'],
- setup()
-
- {
-
-
-
- }
- 
+  props: ["title"],
+  setup() {},
 };
 </script>
 

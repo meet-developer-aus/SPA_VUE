@@ -1,17 +1,13 @@
 <template>
-
-<div>
-    </div><div class="modal-overlay" v-if="isVisible">
+  <div></div>
+  <div class="modal-overlay" v-if="isVisible">
     <div class="modal">
       <div class="modal-header">
         <h2>{{ title }}</h2>
         <button @click="closeModal">&times;</button>
-
-    
       </div>
       <div class="modal-content">
-<Region />      
-
+        <Region />
 
         <slot></slot>
       </div>
@@ -21,37 +17,31 @@
 
 
 <script>
-import { ref } from 'vue'
-import Region from './Region.vue'
+import { ref } from "vue";
+import Region from "./Region.vue";
 export default {
-  name: 'Modal',
-  
-    components: { Region},
-  setup()
-  {
+  name: "Modal",
 
-    let  isVisible= ref(true);
-    const title=ref('Accommodation Options in Sydney');
+  components: { Region },
+  setup() {
+    let isVisible = ref(true);
+    const title = ref("Accommodation Options in Sydney");
 
-//  const openModal=() =>{
-//       isVisible.value = true;
-//     }
+    //  const openModal=() =>{
+    //       isVisible.value = true;
+    //     }
 
-    const closeModal=() =>{
-      isVisible.value= false;
-    }
+    const closeModal = () => {
+      isVisible.value = false;
+    };
 
     return {
-      isVisible, title,closeModal
-      
-    }
-  
-    
-  }
-
-  
-  
-}
+      isVisible,
+      title,
+      closeModal,
+    };
+  },
+};
 </script>
 <style scoped>
 /* Modal Overlay styless*/
@@ -61,7 +51,12 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Use a semi-transparent black for the overlay */
+  background: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Use a semi-transparent black for the overlay */
   color: #fff; /* Change text color to white */
   display: flex;
   align-items: center;
@@ -110,5 +105,4 @@ export default {
 .modal-content {
   /* content styling here */
 }
-
 </style>
