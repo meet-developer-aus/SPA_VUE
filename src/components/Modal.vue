@@ -1,13 +1,15 @@
 <template>
 
-<div>This is a modal</div><div class="modal-overlay" v-if="isVisible">
+<div>
+    </div><div class="modal-overlay" v-if="isVisible">
     <div class="modal">
       <div class="modal-header">
         <h2>{{ title }}</h2>
         <button @click="closeModal">&times;</button>
       </div>
       <div class="modal-content">
-        <!-- Your modal content goes here -->
+      
+
         <slot></slot>
       </div>
     </div>
@@ -99,7 +101,7 @@ export default {
 
 /* Modal Content */
 .modal-content {
-  /* Add your content styling here */
+  /*  content styling here */
 }
 
 </style>
