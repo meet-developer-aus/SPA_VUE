@@ -6,9 +6,12 @@
       <div class="modal-header">
         <h2>{{ title }}</h2>
         <button @click="closeModal">&times;</button>
+
+    
       </div>
       <div class="modal-content">
-      
+<Region />      
+
 
         <slot></slot>
       </div>
@@ -19,8 +22,11 @@
 
 <script>
 import { ref } from 'vue'
+import Region from './Region.vue'
 export default {
   name: 'Modal',
+  
+    components: { Region},
   setup()
   {
 
@@ -68,7 +74,7 @@ export default {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  width: 600px;
+  width: 800px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 

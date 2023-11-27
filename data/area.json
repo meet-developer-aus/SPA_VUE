@@ -1,0 +1,48 @@
+[
+    {
+      "AreaId": 69000207,
+      "Code": 233,
+      "Name": "Roma Area",
+      "Type": "LOCAL",
+      "DomesticRegionId": 69000037,
+      "StateId": 9000006,
+      "StateCode": "QLD"
+    },
+    {
+      "AreaId": 69000216,
+      "Code": 242,
+      "Name": "Chinchilla Area",
+      "Type": "LOCAL",
+      "DomesticRegionId": 69000037,
+      "StateId": 9000006,
+      "StateCode": "QLD"
+    },
+    {
+      "AreaId": 69000219,
+      "Code": 246,
+      "Name": "Taroom Area",
+      "Type": "LOCAL",
+      "DomesticRegionId": 69000037,
+      "StateId": 9000006,
+      "StateCode": "QLD"
+    },
+    {
+        "AreaId": 89000196,
+        "Code": "Phillip Island",
+        "Name": "Phillip Island",
+        "Type": "LOCAL",
+        "DomesticRegionId": 89000197,
+        "StateId": 9000008,
+        "StateCode": "VIC"
+      },
+      {
+        "AreaId": 89000197,
+        "Code": "Yarra Valley & Dandenong Ranges",
+        "Name": "Yarra Valley & Dandenong Ranges",
+        "Type": "LOCAL",
+        "DomesticRegionId": 89000197,
+        "StateId": 9000008,
+        "StateCode": "VIC"
+      }
+
+  ]

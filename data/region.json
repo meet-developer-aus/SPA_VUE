@@ -1,0 +1,17 @@
+[
+    {
+        "RegionId": "89000197",
+        "Code": "Yarra Valley & Dandenong Ranges",
+        "Name": "Yarra Valley & Dandenong Ranges",
+        "Type": "MARKETING",
+        "State": "VIC"
+      },
+       {
+        "RegionId": "69000037",
+        "Code": "124",
+        "Name": "Western Downs Region",
+        "Type": "MARKETING",
+        "State": "QLD"
+      }
+      
+]
