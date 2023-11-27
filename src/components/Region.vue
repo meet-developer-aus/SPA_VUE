@@ -17,8 +17,9 @@
 
 <script>
 import {ref } from 'vue'
-import regionJson from '../../data/region.json'
+// import regionJson from '../../data/region.json'
 import  Area from './Area.vue'
+import { getItemFromLocalStorage } from '../composables/localStorageUtils';
 export default {
     components: {
    Area
@@ -27,7 +28,14 @@ export default {
 
     setup(){
 
-const regions= regionJson;
+const regions=ref(null)
+
+// pull from local storage of browser
+      const storedRegionData = localStorage.getItem('regionData');
+    regions.value = storedRegionData ? JSON.parse(storedRegionData) : null;
+    console.log('Region Data:', regions.value);
+   
+
 //const showArea=ref(null)
 
       const selectedRegion=ref(null)
@@ -42,8 +50,9 @@ const onRegionChange = () => {
     };
 
 
-return{ regions, onRegionChange,selectedRegion}
-    }
+return{regions, onRegionChange,selectedRegion}
+    },
+    
    
     
 

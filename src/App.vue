@@ -5,6 +5,7 @@
    
    <div class="main-content">
 
+
     <Modal @closeModal="closeModal">
       
      
@@ -22,7 +23,7 @@
 import AppHeader from './components/AppHeader.vue';
 import Footer from './components/Footer.vue';
 import  Modal from  './components/Modal.vue'
-
+import axios from 'axios'
 import { ref } from 'vue'
 
 export default {
@@ -40,7 +41,40 @@ const closeModal=() =>{
 
     return {closeModal, app_title}
   },
-  props: true
+  props: true,
+   mounted() {
+    //  Making a GET request to php backend 
+    axios.get('http://localhost:8000/')
+      .then(response => {
+      
+       const regionData = response.data.region.Region;
+console.log('Region Data:', regionData);
+// Storing region data in local storage
+    localStorage.setItem('regionData', JSON.stringify(regionData));
+
+// Accessing Area data
+const areaData = response.data.area.Area;
+console.log('Area Data:', areaData);
+// Sarea data store in local storage
+    localStorage.setItem('areaData', JSON.stringify(areaData));
+
+    
+
+
+// Access Location data from respose
+const locationData = response.data.location.Location;
+console.log('Location Data:', locationData);
+// location data storing on to local storage
+    localStorage.setItem('locationData', JSON.stringify(locationData));
+       
+
+      })
+      
+      .catch(error => {
+        // Handling errors
+        this.error = error.message;
+      });
+  },
   
 };
 </script>

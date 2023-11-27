@@ -18,9 +18,9 @@
 <script>
 import {ref, watchEffect } from 'vue'
 
-import areaJson from '../../data/area.json'
+//import areaJson from '../../data/area.json'
 import  Location from './Location.vue'
-
+import { getItemFromLocalStorage } from '../composables/localStorageUtils';
 export default { 
  
     props: [ 'RegionId'],
@@ -30,6 +30,11 @@ export default {
    //props: true,
     setup(props){
   // const showLocation=ref(false)
+   // Accessing Area data from localStorage
+ // pull from local storage of browser
+     const storedAreaData = localStorage.getItem('areaData');
+    const areaJson= storedAreaData ? JSON.parse(storedAreaData) : null;
+    console.log('Area Data:', areaJson);
 
   const areas=ref(null)
    areas.value=areaJson.filter((myarea)=> myarea.DomesticRegionId==props.RegionId )
@@ -55,9 +60,9 @@ const onAreaChange=() =>{
 
 
 return{  areas, onAreaChange, selectedArea}
-    }
- 
-    
+    },
+
+
 
 }
 </script>

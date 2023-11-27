@@ -25,7 +25,12 @@ export default {
   
 
     setup(props){
-  
+ const selectedLocation=ref(null)
+
+ // pull from local storage of browser
+     const storedLocationData = localStorage.getItem('locationData');
+    const locationJson= storedLocationData ? JSON.parse(storedLocationData) : null;
+    console.log('Location Data:',locationJson);
 
   const locations=ref(null)
    locations.value=locationJson.filter((mylocation)=> mylocation.AreaId==props.myAreaId )
@@ -37,7 +42,7 @@ export default {
       locations.value = locationJson.filter((mylocation) => mylocation.AreaId== props.myAreaId);
     });
       
-         const selectedLocation=ref(null)
+        
 const onLocationChange=() =>{
       // Reset selected location when the area changes
       console.log('Selected Location:', selectedLocation.value);
@@ -50,8 +55,8 @@ const onLocationChange=() =>{
 
 
 return{  locations, onLocationChange, selectedLocation}
-    }
- 
+    },
+   
     
 
 }

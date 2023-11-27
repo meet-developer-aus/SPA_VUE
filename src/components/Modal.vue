@@ -53,7 +53,6 @@ export default {
   
 }
 </script>
-
 <style scoped>
 /* Modal Overlay styless*/
 .modal-overlay {
@@ -62,7 +61,8 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6); /* Use a semi-transparent black for the overlay */
+  color: #fff; /* Change text color to white */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,11 +71,12 @@ export default {
 
 /* Modal styless*/
 .modal {
-  background: #fff;
+  background: #3498db; /* Change background color to blue for the modal */
   padding: 20px;
   border-radius: 8px;
   width: 800px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff; /* Set text color for modal content to white */
 }
 
 /* Modal Header */
@@ -98,16 +99,16 @@ export default {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #555;
+  color: #fff; /* Set text color for close button to white */
 }
 
 .close-btn:hover {
-  color: #333;
+  color: #ccc; /* Change hover color for close button */
 }
 
 /* Modal Content */
 .modal-content {
-  /*  content styling here */
+  /* content styling here */
 }
 
 </style>
