@@ -14,7 +14,7 @@
 
     <div class="dropdown-container">
       <br />
-      <Location :myAreaId1="selectedArea" :RegionId="RegionId" />
+      <Suburb :myAreaId="selectedArea" :RegionId="RegionId" />
     </div>
   </div>
 </template>
@@ -22,12 +22,12 @@
 <script>
 import { ref, watchEffect } from "vue";
 
-import Location from "./Location.vue";
+import Suburb from "./Suburb.vue";
 import { getItemFromLocalStorage } from "../composables/localStorageUtils";
 export default {
   props: {RegionId: String},
   components: {
-    Location,
+    Suburb,
   },
   setup(props) {
     // const showLocation=ref(false)
@@ -55,7 +55,7 @@ export default {
     const selectedArea = ref(null);
     const onAreaChange = () => {
       // Reset selected area when the region changes
-      // console.log("Selected Area:", selectedArea.value);
+     console.log("Selected Area:", selectedArea.value);
       // showLocation.value=true
     };
 
