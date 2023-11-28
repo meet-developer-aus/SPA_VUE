@@ -1,8 +1,7 @@
-VueJS3 Frontend Application - Accommodation Options
+VueJS3 Frontend Application - Accommodation Opti
 
-This VueJS3 frontend application is designed to display accommodation options in Sydney. 
-It utilizes VueJS3 for the frontend framework and is structured as a Single Page Application (SPA). 
-Main points through the application:
+which depends on backend APP available at https://github.com/meet-developer-aus/DataProvider_Backend.git
+
 
 Application Structure
 App.vue
@@ -38,13 +37,21 @@ localStorageUtils.js
     Provides a function to parse JSON data from local storage.
 
 Instructions
-Installation
+Installation via docker which install both this freondend app at 
+https://github.com/meet-developer-aus/SPA_VUE.git
+and also backend app 
+https://github.com/meet-developer-aus/DataProvider_Backend.git
 
-    Clone the Repository:
 
-    bash
+dcoker install as standalon app 
 
-git clone https://github.com/meet-developer-aus/SPA_VUE.git
+
+note: since php backend app use API ket to fetch, create .env file in folder where docker-compose.yml 
+.env file needs to have API key 
+as API_KEY=***********
+
+docker-compose up 
+
 
 Navigate to the Project Directory:
 
@@ -94,4 +101,5 @@ Author
 License
 
 MIT License 
+
 
