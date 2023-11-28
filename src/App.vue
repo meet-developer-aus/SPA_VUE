@@ -68,9 +68,9 @@ if (storedTimestamp && currentTime - parseInt(storedTimestamp) < twentyFourHours
   localStorage.setItem("timestamp", new Date().getTime());
 }
       console.log("Data is not fresh, fetching from the backend");
-      // Data is not fresh, fetch from the backend
+      // Data is not fresh, fetch from the backend which mapped in docker service as phpbackend
       axios
-        .get("http://localhost:80/")
+        .get("http://phpbackend:80/") 
         .then((response) => {
           // Process and store data in local storage
           const regionData = response.data.region.Region;
