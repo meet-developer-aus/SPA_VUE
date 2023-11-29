@@ -48,8 +48,10 @@ const twentyFourHours = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 console.log(currentTime)
 console.log(storedTimestamp)
-
-if (storedTimestamp && currentTime - parseInt(storedTimestamp) < twentyFourHours) {
+// check keys exists for regiondata, area data, location data and it is less than 24 hours
+if (localStorage.getItem("regionData") &&
+    localStorage.getItem("areaData") &&
+    localStorage.getItem("locationData") && storedTimestamp && currentTime - parseInt(storedTimestamp) < twentyFourHours) {
  
      console.log("Data is fresh, showing Modal");
       // Data is fresh, retrieve it from localStorage
