@@ -3,6 +3,7 @@
     <AppHeader :title="app_title" />
 
     <div class="main-content">
+      
       <!-- Conditionally render the Modal component based on showModal value -->
       <Modal v-if="showModal" @closeModal="closeModal">
         <!-- Content of the Modal -->
@@ -41,6 +42,16 @@ export default {
 
   mounted() {
     // Check if the data exists in localStorage and is less than 24 hours old
+    if (process.env.NODE_ENV === 'development') {
+  // Code to run in development mode
+  console.log('Development mode');
+} else if (process.env.NODE_ENV === 'production') {
+  // Code to run in production mode
+  console.log('Production mode');
+} else {
+  // Code for other environments (if needed)
+  console.log('Other environment');
+}
 
     const storedTimestamp = localStorage.getItem("timestamp");
 const currentTime = new Date().getTime();
@@ -71,8 +82,11 @@ if (localStorage.getItem("regionData") &&
 }
       console.log("Data is not fresh, fetching from the backend");
       // Data is not fresh, fetch from the backend which mapped in docker service as phpbackend
+
+      axios.defaults.withCredentials = true;
+
       axios
-        .get("http://phpbackend:80/") 
+        .get("http://phpbackend:80/index.php/api") 
         .then((response) => {
           // Process and store data in local storage
           const regionData = response.data.region.Region;
@@ -87,7 +101,7 @@ if (localStorage.getItem("regionData") &&
           console.log("Area Data:", areaData);
           console.log("Location Data:", locationData);
 
-          this.showModal = true; // Set showModal to true to display the Modal
+         showModal.value = true; // Set showModal to true to display the Modal
         })
         .catch((error) => {
           console.error("Error fetching data:", error.message);
